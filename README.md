@@ -1,6 +1,6 @@
 # RED CONSUMO SOLIDARIO
 
-#### [Ver Wiki](./wiki)
+#### [Ver Wiki](https://github.com/ecomun/red-consumo-solidario/wiki)
 
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
