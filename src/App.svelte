@@ -1,18 +1,34 @@
 <script>
 	// imports hasta arriba
 
-	import Header from './componentes/Header.svelte'
+	import Header from './components/general/Header.svelte'
+	import Home from './components/views/Home.svelte'
+	import About from './components/views/About.svelte'
+	import ProductList from './components/views/ProductList.svelte'
 
 	export let name;
 	export let prop;
+
+	let currentView = 'home'
+
+	const handleChangeView = (view) => {
+		console.log(view)
+		currentView = view
+	}
 </script>
 
-<Header color="blue"/>
-<Header color="red"/>
-<Header color="green"/>
+<Header changeView={handleChangeView}/>
 <main>
-	<h1>Adios {name}! {prop}</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	{#if currentView == 'home'}
+		 <Home />
+	{/if}
+	{#if currentView == 'about'}
+		 <About />
+	{/if}
+	{#if currentView == 'productList'}
+		 <ProductList />
+	{/if}
+	
 </main>
 
 <style>
